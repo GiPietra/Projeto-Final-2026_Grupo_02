@@ -43,6 +43,62 @@ vira uma tabela com uma linha por organismo.
 
 --------------------------
 
+## De onde vêm os dados: o arquivo `arquivos/Flaviviridae-genomes.fasta`
+
+### O que é o NCBI
+
+O **NCBI** (National Center for Biotechnology Information) é um instituto público
+americano que mantém as maiores bases de dados biológicos do mundo — sequências de DNA,
+RNA, proteínas, genomas inteiros, artigos científicos, etc. Praticamente todo pesquisador
+de biologia molecular do planeta usa (ou já usou) dados de lá.
+
+Dentro do NCBI existe o **RefSeq**, uma coleção "curada" de genomas de referência: para
+cada organismo (ou vírus), o RefSeq guarda uma sequência representativa, revisada e bem
+anotada, identificada por um código no formato `NC_XXXXXX.X` (repare que é exatamente o
+prefixo dos IDs no nosso FASTA, tipo `NC_001477.1`).
+
+O arquivo `arquivos/Flaviviridae-genomes.fasta` foi baixado direto do RefSeq/NCBI: ele
+reúne os genomas de referência de **todos os vírus classificados na família
+Flaviviridae** — 159 vírus ao todo. Cada entrada do FASTA é um vírus diferente, com seu
+próprio genoma completo (ou quase completo — alguns são "partial genome", genoma
+parcial).
+
+### Por que a família Flaviviridae importa
+
+Flaviviridae é uma família de vírus de RNA de fita simples, muitos deles transmitidos por
+mosquitos ou carrapatos, e ela inclui alguns dos patógenos humanos mais relevantes da
+história recente:
+
+- **Dengue virus** (4 sorotipos diferentes no arquivo: Dengue 1 a 4)
+- **Zika virus**
+- **Yellow fever virus** (febre amarela)
+- **West Nile virus** (febre do Nilo Ocidental)
+- **Hepatitis C virus** (hepatite C, várias genótipos no arquivo)
+
+Além desses, o arquivo tem dezenas de vírus menos conhecidos do público, mas igualmente
+estudados: pestivírus de gado e porcos (como o *Bovine viral diarrhea virus*, que causa
+prejuízos enormes na pecuária), vírus encontrados em morcegos, roedores, pangolins,
+golfinhos e até em insetos — o que ajuda cientistas a entender de onde vírus novos podem
+"pular" para humanos (spillover).
+
+Ou seja: é uma família com nomes de peso em saúde pública, mas também um bom exemplo de
+como a mesma "receita" genômica (a poliproteína única, que vamos explorar na Parte 3) se
+repete em vírus que infectam hospedeiros completamente diferentes.
+
+### O que vamos analisar
+
+Vamos usar as suas funções para transformar esse arquivo de texto (só letras A, C, G, T)
+numa tabela e responder duas perguntas biológicas de verdade:
+
+1. Vírus parecidos (mesmo gênero, mesmo tipo de hospedeiro) têm uma composição química de
+   DNA parecida? É isso que a análise de **conteúdo GC** vai revelar (Parte 2).
+2. Será que todos esses vírus organizam seu genoma do mesmo jeito, com uma única
+   **poliproteína** cobrindo quase o genoma inteiro? (Parte 3)
+
+As respostas estão descritas em detalhe na seção "Usando as suas funções", mais abaixo.
+
+--------------------------
+
 ## Já está pronto para você (código de apoio)
 
 ### Função `ler_fasta(caminho_do_arquivo)`  —  em `bio/ler_fasta.py`

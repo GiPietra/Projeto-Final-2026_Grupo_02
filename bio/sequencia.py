@@ -2,7 +2,6 @@
 #
 # Nossa "mini BioPython"! Aqui cada função recebe uma sequência como uma
 # STRING (ex: "ATCG") e devolve um resultado (outra string, um número, etc.).
-# Não usamos classes: é tudo função + string, como você já está acostumado.
 #
 # IMPORTANTE: implemente cada função abaixo. Apague o
 # "raise NotImplementedError(...)" quando for resolver.
@@ -47,29 +46,6 @@ def transcrever(sequencia):
     """
     raise NotImplementedError("Implemente a função transcrever")
 
-
-def traduzir(sequencia, parar=False):
-    """
-    Retorna uma STRING com a tradução da sequência para uma proteína.
-
-    Ex: traduzir("ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG") -> "MAIVMGR*KGAR*"
-
-    Regras:
-    - Leia a sequência de 3 em 3 bases (cada trinca é um "códon").
-    - Use o dicionário DNA_PARA_AMINOACIDO (em bio/constantes.py) para
-      descobrir qual aminoácido cada códon representa.
-    - Se o códon for um stop codon (veja a lista DNA_STOP_CODONS), o
-      aminoácido é "*".
-    - Se a trinca NÃO estiver no dicionário (base indefinida, como "N"),
-      use "X" para indicar que não dá para saber.
-    - Se parar=True, a tradução deve PARAR no primeiro stop codon.
-      Se parar=False, continue até o fim, marcando os stops como "*".
-
-    Dica: importe o dicionário no topo do arquivo:
-        from bio.constantes import DNA_PARA_AMINOACIDO, DNA_STOP_CODONS
-    Dica: para pegar as trincas, o passo do range pode ser 3 -> range(0, len, 3).
-    """
-    raise NotImplementedError("Implemente a função traduzir")
 
 
 def calcular_percentual(sequencia, bases):
@@ -117,3 +93,29 @@ def encontrar_inicio(sequencia):
     primeiro "ATG" (ou -1 se não encontrar). A partir daí, use fatiamento.
     """
     raise NotImplementedError("Implemente a função encontrar_inicio")
+
+
+def traduzir(sequencia, parar=False):
+    """
+    Retorna uma STRING com a tradução da sequência para uma proteína.
+
+    Ex: traduzir("ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG") -> "MAIVMGR*KGAR*"
+
+    Regras:
+    - Não precisa achar o código de ínicio! Parta do presuposto que sua função já recebe
+    uma sequencia q inicia com códon ATG.
+    - Leia a sequência de 3 em 3 bases (cada trinca é um "códon").
+    - Use o dicionário DNA_PARA_AMINOACIDO (em bio/constantes.py) para
+      descobrir qual aminoácido cada códon representa.
+    - Se o códon for um stop codon (veja a lista DNA_STOP_CODONS), o
+      aminoácido é "*".
+    - Se a trinca NÃO estiver no dicionário (base indefinida, como "N"),
+      use "X" para indicar que não dá para saber.
+    - Se parar=True, a tradução deve PARAR no primeiro stop codon.
+      Se parar=False, continue até o fim, marcando os stops como "*".
+
+    Dica: importe o dicionário no topo do arquivo:
+        from bio.constantes import DNA_PARA_AMINOACIDO, DNA_STOP_CODONS
+    Dica: para pegar as trincas, o passo do range pode ser 3 -> range(0, len, 3).
+    """
+    raise NotImplementedError("Implemente a função traduzir")
