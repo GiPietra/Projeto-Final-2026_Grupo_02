@@ -1,21 +1,9 @@
 # Exercícios das funções
 #
-# ┌───────────────────────────────────────────────────────────────────────┐
-# │  ATENÇÃO: rode este arquivo A PARTIR DA RAIZ do projeto, com -m:       │
-# │      python -m problemas.exercicios_funcoes                            │
-# │  (com ponto e SEM ".py" no final; não é "python problemas/...py")      │
-# │                                                                        │
-# │  Rodar de outro jeito (ex: "cd problemas" e "python                    │
-# │  exercicios_funcoes.py") causa o erro:                                 │
-# │      ModuleNotFoundError: No module named 'bio'                        │
-# │  porque o Python só acha a pasta "bio" a partir da raiz. Veja o        │
-# │  README da raiz para a explicação completa.                            │
-# └───────────────────────────────────────────────────────────────────────┘
-#
 # Aqui você testa CADA função que criou em bio/sequencia.py, isoladamente,
 # numa sequência pequena, para conferir que todas funcionam.
 #
-# Leia o enunciado em problemas/README.md (seção "Exercícios das funções").
+# Leia o enunciado no README (seção "Exercícios das funções").
 #
 # Para cada bloco abaixo, escreva um print mostrando o resultado e confira se
 # bate com o esperado no comentário.

@@ -1,18 +1,6 @@
 # O Projeto: um panorama da família Flaviviridae
 #
-# ┌───────────────────────────────────────────────────────────────────────┐
-# │  ATENÇÃO: rode este arquivo A PARTIR DA RAIZ do projeto, com -m:       │
-# │      python -m problemas.projeto                                       │
-# │  (com ponto e SEM ".py" no final; não é "python problemas/projeto.py") │
-# │                                                                        │
-# │  Rodar de outro jeito causa dois erros comuns:                        │
-# │    - ModuleNotFoundError: No module named 'bio'                        │
-# │    - FileNotFoundError: ...arquivos/Flaviviridae-genomes.fasta         │
-# │  Os dois somem rodando com -m a partir da raiz, porque as pastas       │
-# │  "bio" e "arquivos" ficam na raiz do projeto. Veja o README da raiz.   │
-# └───────────────────────────────────────────────────────────────────────┘
-#
-# Leia o enunciado completo em problemas/README.md
+# Leia o enunciado completo no README (seção "O Projeto")
 #
 # A ideia é construir UMA tabela (pandas) descrevendo os vírus e, a partir dela,
 # tirar duas conclusões:
