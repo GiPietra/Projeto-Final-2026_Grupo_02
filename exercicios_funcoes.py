@@ -14,6 +14,7 @@ from bio.sequencia import (
     transcrever,
     traduzir,
     calcular_percentual,
+    calcular_percentual_gc,
     contar_bases,
     encontrar_inicio,
 )
@@ -46,5 +47,9 @@ from bio.sequencia import (
 # print(calcular_percentual("ATCGAAAA", ["A"]))
 
 
-# 7) contar_bases         — esperado: {"A": 2, "T": 1, "C": 1, "G": 1}
+# 7) calcular_percentual_gc — esperado: ~0.66 (4 Cs/Gs em 6 bases)
+# print(calcular_percentual_gc("ATCGCC"))
+
+
+# 8) contar_bases         — esperado: {"A": 2, "T": 1, "C": 1, "G": 1}
 # print(contar_bases("ATCGA"))

@@ -14,7 +14,7 @@ import pandas as pd
 from bio.ler_fasta import ler_fasta
 from bio.sequencia import (
     traduzir,
-    calcular_percentual,
+    calcular_percentual_gc,
     encontrar_inicio,
 )
 
@@ -25,13 +25,12 @@ from bio.sequencia import (
 organismos = ler_fasta("arquivos/Flaviviridae-genomes.fasta")
 df = pd.DataFrame(organismos)
 print(df.head())
-# 3) crie a coluna "tamanho" (número de bases)
 
 
 # ------------------------------------------------------------------
 # Parte 2 — O conteúdo GC é aleatório?
 # ------------------------------------------------------------------
-# 1) crie a coluna "gc" com calcular_percentual(seq, ["G", "C"])
+# 1) crie a coluna "gc" com df["seq"].apply(calcular_percentual_gc)
 # 2) mostre os 10 maiores e os 10 menores GC (com o nome!)
 # 3) escreva sua conclusão sobre o padrão que observou
 

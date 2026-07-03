@@ -61,6 +61,19 @@ def calcular_percentual(sequencia, bases):
     raise NotImplementedError("Implemente a função calcular_percentual")
 
 
+def calcular_percentual_gc(sequencia):
+    """
+    Retorna o percentual de G e C na sequência (conteúdo GC).
+
+    Ex: calcular_percentual_gc("ATCGCC") -> ~0.66
+
+    É a mesma coisa que calcular_percentual(sequencia, ["G", "C"]), só que
+    já vem pronta com as bases "G" e "C", assim dá pra usar direto com
+    df["sequencia"].apply(calcular_percentual_gc), sem precisar de lambda.
+    """
+    return calcular_percentual(sequencia, ["G", "C"])
+
+
 def contar_bases(sequencia):
     """
     Retorna um DICIONÁRIO com a contagem de cada base na sequência.
