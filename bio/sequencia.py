@@ -21,7 +21,7 @@ def complementar(sequencia):
     a sequência complementar numa nova string.
     """
     seq_complementar = ""
-    
+
     for base in sequencia:
         seq_complementar += CONVERSOR_DE_BASE[base]
     return seq_complementar
@@ -52,7 +52,7 @@ def transcrever(sequencia):
 
 
 
-def calcular_percentual(sequencia, bases):
+def calcular_percentual(sequencia, lista_bases):
     """
     Recebe uma LISTA de bases e retorna o percentual dessas bases na sequência.
 
@@ -63,7 +63,7 @@ def calcular_percentual(sequencia, bases):
     divida pelo tamanho total da sequência.
     """
     raise NotImplementedError("Implemente a função calcular_percentual")
-
+    
 
 def calcular_percentual_gc(sequencia):
     """
@@ -75,7 +75,16 @@ def calcular_percentual_gc(sequencia):
     já vem pronta com as bases "G" e "C", assim dá pra usar direto com
     df["sequencia"].apply(calcular_percentual_gc), sem precisar de lambda.
     """
-    return calcular_percentual(sequencia, ["G", "C"])
+    base_count_list = 0
+    for base in sequencia:
+        if base == "G":
+            base_count_list += 1
+        elif base == "C":
+            base_count_list += 1
+    
+    list_base_percentage = (base_count_list/len(sequencia))
+    return list_base_percentage
+
 
 
 def contar_bases(sequencia):
