@@ -21,10 +21,9 @@ from bio.sequencia import (
 
 
 # 1) complementar        — esperado: "TAGC"
-# print(complementar("ATCG"))
-print("Testando o commit")
-print("ola, mundo")
-print("bora grupo 2")
+
+print(complementar("ATCG"))
+
 # 2) complementar_reversa — esperado: "CGAT"
 # print(complementar_reversa("ATCG"))
 
