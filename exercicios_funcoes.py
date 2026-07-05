@@ -33,7 +33,8 @@ print(f"Resultado da função complementar:{complementar("ATCG")}")
 
 
 # 4) encontrar_inicio     — esperado: "ATGGGGTAA" (começa no 1º ATG)
-# print(encontrar_inicio("CCCATGGGGTAA"))
+
+print(f"Resultado da função encontrar início: {encontrar_inicio("CCCATGGGGTAA")}")
 
 
 # 5) traduzir             — esperado: "MAIVMGR*KGAR*"

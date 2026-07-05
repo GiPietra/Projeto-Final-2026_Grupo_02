@@ -118,7 +118,11 @@ def encontrar_inicio(sequencia):
     Dica: as strings têm um método .find("ATG") que devolve a posição do
     primeiro "ATG" (ou -1 se não encontrar). A partir daí, use fatiamento.
     """
-    raise NotImplementedError("Implemente a função encontrar_inicio")
+    seq_inicio = ""
+
+    for num in range(sequencia.find("ATG"),len(sequencia)):
+        seq_inicio += sequencia[num]
+    return seq_inicio
 
 
 def traduzir(sequencia, parar=False):
