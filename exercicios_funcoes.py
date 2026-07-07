@@ -38,10 +38,10 @@ print(f"Resultado da função encontrar início: {encontrar_inicio("CCCATGGGGTAA
 
 
 # 5) traduzir             — esperado: "MAIVMGR*KGAR*"
-# print(traduzir("ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG"))
+print(traduzir("ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG"))
 
 #    traduzir com parar=True — deve PARAR no primeiro stop codon, esperado: "MAIVMGR"
-# print(traduzir("ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG", parar=True))
+print(traduzir("ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG", parar=True))
 
 
 # 6) calcular_percentual  — esperado: 0.5 (metade das bases é A)
