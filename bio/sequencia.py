@@ -41,6 +41,7 @@ def complementar_reversa(sequencia):
 
 
 def transcrever(sequencia):
+
     """
     Retorna uma NOVA string com o resultado da transcrição (DNA -> RNA).
 
@@ -48,7 +49,15 @@ def transcrever(sequencia):
 
     Dica: na transcrição, a base T (timina) vira U (uracila).
     """
-    raise NotImplementedError("Implemente a função transcrever")
+    rna =" "
+    for base in sequencia:
+        if base == "T":
+            rna += "U"
+        else:
+            rna += base 
+    return rna 
+
+    
 
 
 

@@ -29,7 +29,7 @@ print(f"Resultado da função complementar:{complementar("ATCG")}")
 
 
 # 3) transcrever          — esperado: "AUCG"
-# print(transcrever("ATCG"))
+print(f"Resultado da função transcrever:{transcrever("ATCG")}")
 
 
 # 4) encontrar_inicio     — esperado: "ATGGGGTAA" (começa no 1º ATG)
