@@ -57,8 +57,6 @@ def transcrever(sequencia):
             rna += base 
     return rna 
 
-    
-
 
 
 def calcular_percentual(sequencia, lista_bases):
