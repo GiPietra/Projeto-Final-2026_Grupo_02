@@ -77,7 +77,7 @@ def calcular_percentual(sequencia, lista_bases):
     quantidade = 0
 
     for base in sequencia:
-        if base in bases:
+        if base in base:
             quantidade += 1
 
     return quantidade / len(sequencia)
