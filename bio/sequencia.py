@@ -20,12 +20,11 @@ def complementar(sequencia):
     Dica: percorra cada base da sequência e vá montando (concatenando)
     a sequência complementar numa nova string.
     """
-    sequencia_complementar = ""
+    seq_complementar = ""
 
     for base in sequencia:
-        sequencia_complementar += CONVERSOR_DE_BASE[base]
-
-    return sequencia_complementar
+        seq_complementar += CONVERSOR_DE_BASE[base]
+    return seq_complementar
 
 
 def complementar_reversa(sequencia):
@@ -42,6 +41,7 @@ def complementar_reversa(sequencia):
 
 
 def transcrever(sequencia):
+
     """
     Retorna uma NOVA string com o resultado da transcrição (DNA -> RNA).
 
@@ -49,11 +49,19 @@ def transcrever(sequencia):
 
     Dica: na transcrição, a base T (timina) vira U (uracila).
     """
-    return sequencia.replace("T", "U")
+    rna =" "
+    for base in sequencia:
+        if base == "T":
+            rna += "U"
+        else:
+            rna += base 
+    return rna 
+
+    
 
 
 
-def calcular_percentual(sequencia, bases):
+def calcular_percentual(sequencia, lista_bases):
     """
     Recebe uma LISTA de bases e retorna o percentual dessas bases na sequência.
 
@@ -85,7 +93,16 @@ def calcular_percentual_gc(sequencia):
     já vem pronta com as bases "G" e "C", assim dá pra usar direto com
     df["sequencia"].apply(calcular_percentual_gc), sem precisar de lambda.
     """
-    return calcular_percentual(sequencia, ["G", "C"])
+    base_count_list = 0
+    for base in sequencia:
+        if base == "G":
+            base_count_list += 1
+        elif base == "C":
+            base_count_list += 1
+    
+    list_base_percentage = (base_count_list/len(sequencia))
+    return list_base_percentage
+
 
 
 def contar_bases(sequencia):
@@ -145,21 +162,21 @@ def traduzir(sequencia, parar=False):
         from bio.constantes import DNA_PARA_AMINOACIDO, DNA_STOP_CODONS
     Dica: para pegar as trincas, o passo do range pode ser 3 -> range(0, len, 3).
     """
+    tamanho = len(sequencia)
     proteina = ""
-
-    for posicao in range(0, len(sequencia), 3):
-        codon = sequencia[posicao:posicao + 3]
-
-        if len(codon) < 3:
-            continue
-
-        if codon in DNA_STOP_CODONS:
-            if parar:
-                break
-            proteina += "*"
-        elif codon in DNA_PARA_AMINOACIDO:
-            proteina += DNA_PARA_AMINOACIDO[codon]
+    parou = False
+    for i in range (0, tamanho, 3):
+        trinca = sequencia[i]+sequencia[i+1]+sequencia[i+2]
+        if trinca in DNA_PARA_AMINOACIDO:
+            aminoacido=DNA_PARA_AMINOACIDO[trinca]
+        elif trinca in DNA_STOP_CODONS:
+            aminoacido= "*"
         else:
-            proteina += "X"
+            aminoacido="X"
 
+        if aminoacido == "*" and parar == True:
+            parou = True
+        if parou == False:
+            proteina = proteina + aminoacido
+            
     return proteina
