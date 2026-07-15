@@ -29,7 +29,6 @@ from bio.sequencia import (
 # ------------------------------------------------------------------
 organismos = ler_fasta("arquivos/Flaviviridae-genomes.fasta")
 df = pd.DataFrame(organismos)
-df["tamanho"] = df["sequencia"].apply(len)
 print(df.head())
 
 
