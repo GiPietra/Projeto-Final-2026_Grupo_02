@@ -37,7 +37,7 @@ def complementar_reversa(sequencia):
     a função complementar() que acabou de escrever e depois inverter o
     resultado (lembre-se do truque de fatiamento [::-1]).
     """
-    raise NotImplementedError("Implemente a função complementar_reversa")
+    return complementar(sequencia)[::-1]
 
 
 def transcrever(sequencia):
@@ -69,8 +69,17 @@ def calcular_percentual(sequencia, lista_bases):
     Dica: conte quantas bases da sequência estão dentro da lista "bases" e
     divida pelo tamanho total da sequência.
     """
-    raise NotImplementedError("Implemente a função calcular_percentual")
-    
+    if len(sequencia) == 0:
+        return 0
+
+    quantidade = 0
+
+    for base in sequencia:
+        if base in base:
+            quantidade += 1
+
+    return quantidade / len(sequencia)
+
 
 def calcular_percentual_gc(sequencia):
     """
@@ -95,16 +104,11 @@ def calcular_percentual_gc(sequencia):
 
 
 def contar_bases(sequencia):
-    """
-    Retorna um DICIONÁRIO com a contagem de cada base na sequência.
-
-    Ex: contar_bases("ATCGA") -> {"A": 2, "T": 1, "C": 1, "G": 1}
-
-    Dica: crie um dicionário começando as contagens em 0 e vá somando 1
-    conforme percorre cada base da sequência. (Isso vai ser bem útil no
-    exercício de pandas!)
-    """
-    raise NotImplementedError("Implemente a função contar_bases")
+    
+    print("A:", sequencia.count("A"))
+    print("T:", sequencia.count("T"))
+    print("C:", sequencia.count("C"))
+    print("G:", sequencia.count("G"))
 
 
 def encontrar_inicio(sequencia):
@@ -125,11 +129,12 @@ def encontrar_inicio(sequencia):
     Dica: as strings têm um método .find("ATG") que devolve a posição do
     primeiro "ATG" (ou -1 se não encontrar). A partir daí, use fatiamento.
     """
-    seq_inicio = ""
+    posicao_inicio = sequencia.find("ATG")
 
-    for num in range(sequencia.find("ATG"),len(sequencia)):
-        seq_inicio += sequencia[num]
-    return seq_inicio
+    if posicao_inicio == -1:
+        return ""
+
+    return sequencia[posicao_inicio:]
 
 
 def traduzir(sequencia, parar=False):
